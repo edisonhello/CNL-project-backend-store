@@ -12,11 +12,9 @@ function App() {
     <div>
       <NavBar></NavBar>
       <div>
-        {user ? <LoginForm setUser={setUser}></LoginForm> : <Information user={user}></Information>}
+        {user ? <Information user={user}></Information> : <LoginForm setUser={setUser}></LoginForm>}
       </div>
     </div>
-
-
   );
 }
 
