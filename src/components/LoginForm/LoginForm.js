@@ -42,7 +42,7 @@ function LoginForm({ setStore }) {
                 </div>
                 <div class="col-12 text-center p-2">
                   <button type="submit" class="btn btn-primary mx-3" onClick={signIn}> Sign in </button>
-                  <button class="btn btn-info mx-3" onClick={() => setShowLogin(false)}> Sign up </button>
+                  <button class="btn btn-info mx-3" onClick={() => setShowLogin(false)}> Switch to sign up </button>
                 </div>
               </div>
             ) : (
@@ -73,7 +73,7 @@ function LoginForm({ setStore }) {
                 </div>
                 <div class="col-12 text-center p-2">
                   <button type="submit" class="btn btn-primary mx-3" onClick={signUp}> Sign up </button>
-                  <button class="btn btn-info mx-3" onClick={() => setShowLogin(true)}> Sign in </button>
+                  <button class="btn btn-info mx-3" onClick={() => setShowLogin(true)}> Switch to sign in </button>
                 </div>
               </div>
             )
