@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Information from './components/Information/Information.js';
+import LoginForm from './components/LoginForm/LoginForm.js';
+import NavBar from './components/NavBar/NarBar.js';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar></NavBar>
+      <div>
+        {user ? <LoginForm setUser={setUser}></LoginForm> : <Information user={user}></Information>}
+      </div>
     </div>
+
+
   );
 }
 
