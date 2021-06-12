@@ -6,13 +6,13 @@ import NavBar from './components/NavBar/NavBar.js';
 
 function App() {
 
-  const [store, setStore] = useState(null);
+  const [token, setToken] = useState("");
 
   return (
     <div>
       <NavBar></NavBar>
       <div>
-        {store ? <Information store={store}></Information> : <LoginForm setStore={setStore}></LoginForm>}
+        {token ? <Information token={token}></Information> : <LoginForm setToken={setToken}></LoginForm>}
       </div>
     </div>
   );

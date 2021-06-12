@@ -1,8 +1,8 @@
 
 import { useState } from "react";
-import stubStore from "../../stubs/stubStore.js";
+import api from "../../utils/api.js";
 
-function LoginForm({ setStore }) {
+function LoginForm({ setToken }) {
 
   const [showLogin, setShowLogin] = useState(true);
   const [phone, setPhone] = useState('');
@@ -12,14 +12,25 @@ function LoginForm({ setStore }) {
 
   const signIn = (e) => {
     console.log('ja', phone, password);
-    setStore(stubStore);
     e.preventDefault();
+
+    api.signIn({ phone, password }).then(({ token }) => {
+      console.log('login return', token);
+      setToken(token);
+    }).catch(err => {
+      console.error(err);
+    });
   };
 
   const signUp = (e) => {
     console.log('ja', phone, password, name, address);
-    setStore(stubStore);
     e.preventDefault();
+
+    api.signUp({ phone, password, name, address }).then(store => {
+      console.log('store', store);
+    }).catch(err => {
+      console.error(err);
+    });
   };
   
   return (
